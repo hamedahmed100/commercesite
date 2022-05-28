@@ -18,7 +18,8 @@ if(isset($_POST['create'])){
 
 
   $query="INSERT INTO students(fullname,phonenumber,email,guardianphonenumber,governorate,stageid,groupid) 
-            VALUES('$fullname','$phone','$email','$guardian','$governorate',$stage,$group)";  
+            VALUES('$fullname','$phone','$email','$guardian','$governorate',$stage,$group)";
+         
 try {
     $stmt = $conn->prepare($query);
     // execute query
@@ -26,6 +27,7 @@ try {
     header("Location:success.php");
     die();
 } catch (Exception $ex) {
-    header("Location:notFound.php");
+    
+  // html for -> connection  faliure
 }
 }

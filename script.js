@@ -20,6 +20,7 @@ class Student {
 
     bundleSize = 50
     async intitTable() {
+        await (() => { document.querySelector('table').innerHTML = '' })();
         sessionStorage.setItem('startIndex', 1);
         sessionStorage.setItem('totalCount', 0);
         sessionStorage.setItem('endOfData', 'false');
@@ -56,10 +57,11 @@ class Student {
         console.log(data.length)
         let table = document.querySelector('table');
         let tbody = document.createElement('tbody');
-        if (data.length <1 && document.querySelector('.input').value !=''){
-            document.querySelector(".message span").innerText ='لا يوجد بيانات تطابق البحث';
+        if (data.length < 1 && document.querySelector('.input').value != '') {
+            document.querySelector(".message span").innerText = 'لا يوجد بيانات تطابق البحث';
             document.querySelector(".message span").classList.add("activ");
-        }else{
+
+        } else {
             document.querySelector(".message span").classList.remove("activ");
         }
         data.forEach(element => {
@@ -91,8 +93,8 @@ class Student {
         //console.log(parseInt(sessionStorage.getItem('startIndex')) + this.bundleSize);
         let bodyString = "startIndex=" + parseInt(sessionStorage.getItem('startIndex')) + "&lastIndex=" + (parseInt(sessionStorage.getItem('startIndex')) + this.bundleSize)
         if (document.querySelector('.input').value != '') bodyString += `&queryString=${document.querySelector('.input').value}`
-       
-        await fetch("/api/student/student.php", {
+
+        await fetch("/commerceCenterSite/api/student/student.php", {
             method: 'Post',
             body: bodyString,
             // {
@@ -183,25 +185,31 @@ window.addEventListener('scroll', () => {
 });
 
 var regex = new RegExp("^[\u0621-\u064A0-9a-zA-Z ]*$");
-document.querySelector('.input').addEventListener('input', (event) => {
-    
+document.querySelector('.input').addEventListener('input', async (event) => {
+
     if (regex.test(document.querySelector('.input').value)) {
-        var element = document.querySelector(".message span").classList.remove("activ");
-        sessionStorage.setItem('startIndex', 1);
-        sessionStorage.setItem('totalCount', 0);
-        sessionStorage.setItem('endOfData', 'false');
-        console.log('sssssssssssss');
-        document.querySelector('table').innerHTML = '';
+        setTimeout(async() => {
+
+            var element = document.querySelector(".message span").classList.remove("activ");
+            sessionStorage.setItem('startIndex', 1);
+            sessionStorage.setItem('totalCount', 0);
+            sessionStorage.setItem('endOfData', 'false');
+            console.log( document.querySelector('table').innerHTML)
+            await (() => { document.querySelector('table').innerHTML=''})();
+            console.log( document.querySelector('table').innerHTML)
+
+            let student = new Student();
+            student.intitTable();
+            sessionStorage.setItem("isProcessing", 'false');
+            
+        }, 1000);//wait 2 seconds
 
 
-        let student = new Student();
-        student.intitTable();
-        sessionStorage.setItem("isProcessing", 'false');
     } else {
-        document.querySelector(".message span").innerText ='مسموح فقط بلارقام والحروف العربيه والانجليزيه';
+        document.querySelector(".message span").innerText = 'مسموح فقط بلارقام والحروف العربيه والانجليزيه';
         var element = document.querySelector(".message span").classList.add("activ");
-       
-       
+
+
     }
 
     // if (document.querySelector('.input').value == '') {

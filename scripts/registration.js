@@ -1,5 +1,5 @@
 (async () => {
-    await fetch("/api/student/stages.php", {
+    await fetch("/commerceCenterSite/api/student/stages.php", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -27,7 +27,7 @@
 document.querySelector("#stage").addEventListener('change', () => {
     console.log('called');
     try {
-        fetch("/api/student/groups.php", {
+        fetch("/commerceCenterSite/api/student/groups.php", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

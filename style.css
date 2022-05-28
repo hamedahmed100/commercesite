@@ -1,0 +1,187 @@
+.header{
+   color:#525947;
+   margin-top: 50px;
+   text-align:center;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-size: 48px;
+   font-weight: 700;
+}
+
+body{
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+    padding: 0px 50px 0 50px;
+    /* background-color : #F0C869; */
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-center;
+	align-items: center;
+	align-content: center;
+
+   background-image: url('eebf52.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; 
+
+/*   
+
+    grainy-gradients
+
+  background: rgb(2,26,28);
+  background: linear-gradient(270deg, rgba(2,26,28,1) 19%, rgba(9,47,48,1) 36%);,
+  url(https://grainy-gradients.vercel.app/noise.svg); */
+
+
+
+  /* background: linear-gradient(90deg, #F0C869 21px, transparent 1%) center, linear-gradient(#F0C869 21px, transparent 1%) center, #000000;
+  background-size: 22px 22px; */
+
+/* 
+
+  textures
+
+  background-color: #026873;
+background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+background-size: 13px, 29px, 37px, 53px; */
+/*   
+background-color:black;
+background-image:
+radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+background-position: 0 0, 40px 60px, 130px 270px, 70px 100px; */
+}
+
+table {
+    margin-top: 20px ;
+    border-collapse: collapse;
+    width: 100%;
+    
+  }
+  
+  td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  table tr:nth-child(even){background-color: #f2f2f2;}
+  table tr:nth-child(odd){background-color: #CDDFB0;}
+  
+  table tr:hover {background-color: #525947;}
+  tr:hover td {
+      color:white;
+  }
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #1A2238;
+    color: white;
+  }
+  tr{
+      text-align: center;
+  }
+
+
+
+
+/* snack bar*/
+  #snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+/* snack bar*/
+
+
+
+.box{
+  position: relative;
+  display:flex;
+  align-self: end;
+}
+.input {
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: 4px solid #ffd52d;
+  border-radius: 50px;
+  box-sizing: border-box;
+  font-family: Comic Sans MS;
+  font-size: 26px;
+  color: #ffd52d;
+  background-color: #1A2238;
+  outline: none;
+  transition: .5s;
+}
+.active, .box:hover input{
+  width: 20vw;
+  background: #272133;
+  border-radius: 10px;
+}
+i{
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translate(-50%,-50%);
+  font-size: 20px;
+  color: #ffd52d;
+  transition: .2s;
+}
+.active i, .box:hover i{
+  opacity: 0;
+  z-index: -1;
+}
+
