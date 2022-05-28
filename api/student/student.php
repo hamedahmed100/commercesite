@@ -47,7 +47,7 @@ try {
     //$data = json_decode(file_get_contents("php://input"));
     //echo  json_encode($_POST['startIndex']);
     if (!empty($_POST['queryString'])) {
-        $query = str_replace("1=1", "fullname like '%" . $_POST['queryString']  . "%' and 1=1", $query);
+        $query = str_replace("1=1", "fullname like '%" . $_POST['queryString'] . "%' and 1=1", $query);
     }
     if (!empty($_POST['startIndex'])) {
         $query = str_replace("1=1", " ss.id >= " . $_POST['startIndex'] . " and 1=1", $query);
@@ -64,8 +64,9 @@ try {
 
     //$num = $stmt->rowCount();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $json = json_encode($results);
-    echo $json;
+    
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode($results);
 } catch (Exception $exception) {
 //     echo  $exception->getMessage();
 }
