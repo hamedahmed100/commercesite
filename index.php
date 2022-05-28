@@ -22,6 +22,7 @@
     if (!isset($_SESSION['logedIn'])) // If session is not set then redirect to Login Page
     {
         header("Location:loginui.php");
+        die();
     }
     ?>
 
