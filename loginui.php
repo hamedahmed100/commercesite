@@ -264,7 +264,7 @@
             var params =`user=${document.querySelector('.user').value}&pass=${document.querySelector('.pass').value}` 
             http.send(params);
             http.onload = function () {
-               console.log(http.responseText)
+               //console.log(http.responseText)
                // console.log(http.responseText=='success')
                 if(http.responseText=='success') {
                     //window.open("index.php","_self")
