@@ -258,7 +258,7 @@
                     document.querySelector(".message span").classList.add("activ");
                     return;
             }
-            var http = new XMLHttpsRequest();
+            var http = new XMLHttpRequest();
             http.open("POST", "login.php", true);
             http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             var params =`user=${document.querySelector('.user').value}&pass=${document.querySelector('.pass').value}` 
