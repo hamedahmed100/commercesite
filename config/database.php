@@ -20,17 +20,9 @@ class Database{
         $this->conn = null;
   
         try{
-           # $this->conn = new PDO("pgsql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
-           # $this->conn->exec("set names utf8");
-            $dsn = "pgsql:host=$host;port=5432;dbname=$db;";
+            $this->conn = new PDO("pgsql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conn->exec("set names utf8");
 
-            // make a database connection
-            return new PDO(
-                $dsn,
-                $this->username,
-                $this->password,
-                [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
-            );
         }catch(Exception $exception){
             echo "Connection error: " . $exception->getMessage();
         }
