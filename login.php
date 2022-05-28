@@ -32,14 +32,12 @@ if (
 
 			$_SESSION['logedIn'] = $user;
 
-			header("Location:index.php");
-			die();
+			http_response_code(200); exit;
 			echo 'success';
 		} else {
+			http_response_code(404); exit;
 			echo 'no user';
 			//echo '<script type="text/javascript"> console.log(`123`); document.querySelector(".message span").classList.add("activ");</script>';
-			header("Location:loginui.php");
-
 		}
 	} catch (Exception $ex) {
 		echo $ex;
