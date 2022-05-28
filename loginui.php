@@ -267,8 +267,8 @@
                console.log(http.status)
                // console.log(http.responseText=='success')
                 if(http.status==200) {
-                    //window.open("index.php","_self")
-                    header("Location:index.php");
+                    window.open("index.php","_self")
+                    //header("Location:index.php");
                 }
                 else if (http.status==400) {
                     document.querySelector(".message span").innerText =`لا يوجد بيانات دخول مطابقه`; 
