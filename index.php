@@ -347,7 +347,7 @@
                     <li class="menu-item current-menu-item"><a class="nav__link" href="Registration.html">إضافة طالب</a></li>
                 </ul>
             </div>
-            <input class="search" type="text" name="txt" placeholder="Search.." onclick="activate(event)" onfocusout="deactivate(event) "/>
+            <input class="search input" type="text" name="txt" placeholder="Search.." onclick="activate(event)" onfocusout="deactivate(event) "/>
             <div class="logo">MR - <span class="Goda">Goda</span></div>
         </nav>
     <table class="table">
