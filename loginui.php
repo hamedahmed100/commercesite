@@ -258,13 +258,13 @@
                     document.querySelector(".message span").classList.add("activ");
                     return;
             }
-            var http = new XMLHttpRequest();
+            var http = new XMLHttpsRequest();
             http.open("POST", "login.php", true);
             http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             var params =`user=${document.querySelector('.user').value}&pass=${document.querySelector('.pass').value}` 
             http.send(params);
             http.onload = function () {
-               // console.log(http.responseText)
+               console.log(http.responseText)
                // console.log(http.responseText=='success')
                 if(http.responseText=='success') {
                     //window.open("index.php","_self")
