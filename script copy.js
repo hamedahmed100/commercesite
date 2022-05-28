@@ -86,7 +86,7 @@ class Student {
 
         // jQuery.ajax({
         //     type: "Post",
-        //     url: '/commerceCenterSite/api/student/student.php',
+        //     url: '/api/student/student.php',
 
 
         //     success: function (obj, textstatus) {
@@ -108,7 +108,7 @@ class Student {
         //     "lastIndex": 40
         //     }
         //);
-        await fetch("/commerceCenterSite/api/student/student.php", {
+        await fetch("/api/student/student.php", {
             method: 'Post',
             body: "startIndex="  + parseInt(sessionStorage.getItem('startIndex')) + "&lastIndex=" +parseInt(sessionStorage.getItem('startIndex')) + this.bundleSize,
             // {

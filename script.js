@@ -94,7 +94,7 @@ class Student {
         let bodyString = "startIndex=" + parseInt(sessionStorage.getItem('startIndex')) + "&lastIndex=" + (parseInt(sessionStorage.getItem('startIndex')) + this.bundleSize)
         if (document.querySelector('.input').value != '') bodyString += `&queryString=${document.querySelector('.input').value}`
 
-        await fetch("/commerceCenterSite/api/student/student.php", {
+        await fetch("/api/student/student.php", {
             method: 'Post',
             body: bodyString,
             // {
