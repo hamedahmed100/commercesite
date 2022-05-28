@@ -329,10 +329,7 @@
 </head>
 <body>
     <?php
-    if (!isset($_SESSION['logedIn'])) // If session is not set then redirect to Login Page
-    {
-        header("Location:loginui.php");
-    }
+    if (!isset($_SESSION['logedIn'])) header("Location:loginui.php");
     ?>
         <nav class="navbar">
             <div>
