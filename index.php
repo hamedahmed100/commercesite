@@ -1,5 +1,5 @@
 
-<?php session_start();  ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -331,7 +331,7 @@
     <?php
     if (!isset($_SESSION['logedIn'])) // If session is not set then redirect to Login Page
     {
-        header("Location:login.html");
+        header("Location:login.php");
     }
     ?>
         <nav class="navbar">
@@ -343,11 +343,14 @@
                 </button>
                 <ul id="primary-menu" class="menu nav-menu">
                     <li><a class="sub-nav__link" href='logout.php'>تسجيل الخروج</a></li>
-                    <li class="menu-item"><a class="nav__link" href="allSdutents.html">بيانات الطلاب</a></li>
-                    <li class="menu-item current-menu-item"><a class="nav__link" href="Registration.html">إضافة طالب</a></li>
+                    <li class="menu-item"><a class="nav__link" href="allSdutents.php">بيانات الطلاب</a></li>
+                    <li class="menu-item current-menu-item"><a class="nav__link" href="Registration.php">إضافة طالب</a></li>
                 </ul>
             </div>
-            <input class="search input" type="text" name="txt" placeholder="Search.." onclick="activate(event)" onfocusout="deactivate(event) "/>
+            <input class="search input"  onclick="activate(event)" onfocusout="deactivate(event)" type="text" name="txt" placeholder="Search.." onclick="activate(event)" onfocusout="deactivate(event) "/>
+            <div class="row">
+              <div class="message"> <span>مسموح فقط بلارقام والحروف العربيه والانجليزيه</span>
+        </div>
             <div class="logo">MR - <span class="Goda">Goda</span></div>
         </nav>
     <table class="table">
