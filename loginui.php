@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-
     <style>
         body,
         html {
@@ -268,7 +266,10 @@
             http.onload = function () {
                 console.log(http.responseText)
                // console.log(http.responseText=='success')
-                if(http.responseText=='success') window.open("index.php","_self")
+                if(http.responseText=='success') {
+                    //window.open("index.php","_self")
+                    header("Location:index.php");
+                }
                 else if (http.responseText=='no user') {
                     document.querySelector(".message span").innerText =`لا يوجد بيانات دخول مطابقه`; 
                     document.querySelector(".message span").classList.add("activ");
