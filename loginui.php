@@ -266,11 +266,11 @@
             http.onload = function () {
                console.log(http.status)
                // console.log(http.responseText=='success')
-                if(http.responseText=='success') {
+                if(http.status==200) {
                     //window.open("index.php","_self")
                     header("Location:index.php");
                 }
-                else if (http.responseText=='no user') {
+                else if (http.status==400) {
                     document.querySelector(".message span").innerText =`لا يوجد بيانات دخول مطابقه`; 
                     document.querySelector(".message span").classList.add("activ");
                 } else {

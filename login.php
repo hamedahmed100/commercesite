@@ -35,7 +35,7 @@ if (
 			http_response_code(200); exit;
 			echo 'success';
 		} else {
-			http_response_code(404); exit;
+			http_response_code(400); exit;
 			echo 'no user';
 			//echo '<script type="text/javascript"> console.log(`123`); document.querySelector(".message span").classList.add("activ");</script>';
 		}
