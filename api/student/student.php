@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['logedIn'])) header("Location:../../login.html");
+if (!isset($_SESSION['logedIn'])) header("Location:../../loginui.php");
 header("Access-Control-Allow-Origin: *");
 header("Content-Type:json");
 header("Access-Control-Allow-Methods: POST");
