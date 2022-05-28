@@ -5,7 +5,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,20 +27,13 @@
 
     <h1 class="header">الطلاب</h1>
     <a href='logout.php'> Logout</a>
-    <title>Search</title>
-    
+    <title>Search</title> 
         <div class="message"> <span>مسموح فقط بلارقام والحروف العربيه والانجليزيه</span></div>
-
         <div class="box">
-
-
             <input type="text" class="input" name="txt" onclick="activate(event)" onfocusout="deactivate(event)">
 
             <i class="fas fa-search"></i>
         </div>
-  
-
-
     <table class="table">
         <thead></thead>
         <tbody></tbody>

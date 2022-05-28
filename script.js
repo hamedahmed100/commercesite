@@ -1,5 +1,4 @@
 
-
 function activate(event) {
     var element = document.querySelector(".input");
     element.classList.add("active");
@@ -15,9 +14,7 @@ function deactivate(event) {
     event.preventDefault();
 
 }
-
 class Student {
-
     bundleSize = 50
     async intitTable() {
         await (() => { document.querySelector('table').innerHTML = '' })();
@@ -45,14 +42,10 @@ class Student {
             table.appendChild(thead);
             ////console.log(table)
         }
+        console.log("before update data ##########");
+        console.log(data);
         this.updateTable(data);
-
-        //window.location.reload();
-
-
     }
-
-
     updateTable(data) {
         console.log(data.length)
         let table = document.querySelector('table');
@@ -87,7 +80,7 @@ class Student {
     }
 
     async fetchNext() {
-        //console.log('called');
+        console.log('called##############');
         let data = [];
         //console.log(parseInt(sessionStorage.getItem('startIndex')));
         //console.log(parseInt(sessionStorage.getItem('startIndex')) + this.bundleSize);
@@ -211,26 +204,4 @@ document.querySelector('.input').addEventListener('input', async (event) => {
 
 
     }
-
-    // if (document.querySelector('.input').value == '') {
-    //     document.querySelector('.input').value  = ''
-    //     document.querySelector('.input').remove("active");
-    // }
-    // if (event.target.value == '') {
-
-    //     (async () => {
-    //         setTimeout(async function () {
-    //             student.updateTable(await student.fetchNext());
-    //         }, 1000);
-    //     })();
-    // }
-    // else{
-    //     (async () => {
-    //         setTimeout(async function () {
-    //             student.updateTable(await student.fetchNext(event.target.value));
-    //         }, 1000);
-    //     })();
-
-
-    // }
 });
